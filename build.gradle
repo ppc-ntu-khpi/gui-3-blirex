@@ -1,18 +1,18 @@
 plugins {
-	id 'java'
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
-dependencies {
-	testImplementation('org.junit.jupiter:junit-jupiter:5.6.0')
+javafx {
+    version = "17"
+    modules = [ 'javafx.controls' ]
 }
 
-test {
-	useJUnitPlatform()
-	testLogging {
-		events "passed", "skipped", "failed"
-	}
+application {
+    mainClass = 'com.mybank.gui.FXDemo'
 }
